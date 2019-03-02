@@ -10,16 +10,16 @@ var jumpUrls = ['http://dolphin.yoka.com/c?z=yoka&u=', 'https://www.zzidc.com/to
 
 var tips = {
     appSuccess: function(count) {
-        return `<b style="font-size: 22px;color: LimeGreen">分享成功  <img style="width: 20px;vertical-align:middle" src="assets/dui.png"></b><br/><br/>您仅需再分享到<b style="font-size: 18px;color: red">${count || 1}个不同的群</b><br/><b style="font-size: 20px;color: red;">${num}元现金</b><br/>将自动存入您的微信钱包`
+        return `<b style="font-size: 22px;color: LimeGreen">分享成功  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/dui.png"></b><br/><br/>您仅需再分享到<b style="font-size: 18px;color: red">${count || 1}个不同的群</b><br/><b style="font-size: 20px;color: red;">${num}元现金</b><br/>将自动存入您的微信钱包`
     },
     appFail: function() {
-        return `<b style="font-size: 22px;color: red">分享失败  <img style="width: 20px;vertical-align:middle" src="assets/cuo.png"></b><br>注意：请不要分享到<b style="color: red">相同的群或好友</b><br>请尝试重新分享到<b style="color: red">不同的群</b><br/>即可马上领取<b style="font-size: 18px;color: red;">${num}</b>元现金`
+        return `<b style="font-size: 22px;color: red">分享失败  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/cuo.png"></b><br>注意：请不要分享到<b style="color: red">相同的群或好友</b><br>请尝试重新分享到<b style="color: red">不同的群</b><br/>即可马上领取<b style="font-size: 18px;color: red;">${num}</b>元现金`
     },
     timelineFail: function(count) {
-        return `<b style="font-size: 22px;color: red">分享失败  <img style="width: 20px;vertical-align:middle" src="assets/cuo.png"></b><br><br>注意：必须<b style="color: red">公开</b>分享才可以领取<br><b style="color: #ffaa00">客服需要验证朋友圈分享信息发放红包！</b><br>请尝试重新分享到<b style="font-size: 18px;color: #f5294c">朋友圈</b><br>保证<b style="color: red">100%</b>可以领取<b style="font-size: 18px;color: red;">${num}</b>元现金`
+        return `<b style="font-size: 22px;color: red">分享失败  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/cuo.png"></b><br><br>注意：必须<b style="color: red">公开</b>分享才可以领取<br><b style="color: #ffaa00">客服需要验证朋友圈分享信息发放红包！</b><br>请尝试重新分享到<b style="font-size: 18px;color: #f5294c">朋友圈</b><br>保证<b style="color: red">100%</b>可以领取<b style="font-size: 18px;color: red;">${num}</b>元现金`
     },
     timelineSuccess: function(count) {
-        return `<b style="font-size: 22px;color: LimeGreen">分享成功  <img style="width: 20px;vertical-align:middle" src="assets/dui.png"></b><br/><br/>仅需再分享到<b style="font-size: 18px;color: red">${count}次朋友圈</b><br/><b style="font-size: 20px;color: red;">${num}元现金</b><br/>将自动存入您的微信钱包`
+        return `<b style="font-size: 22px;color: LimeGreen">分享成功  <img style="width: 20px;vertical-align:middle" src="https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/dui.png"></b><br/><br/>仅需再分享到<b style="font-size: 18px;color: red">${count}次朋友圈</b><br/><b style="font-size: 20px;color: red;">${num}元现金</b><br/>将自动存入您的微信钱包`
     },
     done: function() {
         return '<b>感谢您的参与 :-)</b><br/><b style="font-size: 18px;color: red;">注意：系统将会验证朋友圈信息判断是否完成分享任务！</b><br/><br/><b>由于活动量巨大<br/>红包最迟24小时内到账<br/>请保留朋友圈信息至红包到账<br/>请注意查看您的微信钱包<br/></b><b style="color: red;">删除分享链接可能导致无法到账</b>'
@@ -80,7 +80,7 @@ function share_start() {
 }
 
 function loading() {
-    wxalert('<img style=\"width: 30px\" src=\"assets/loading.gif"><br><b style=\"font-size: 20px;color: red\">正在查询红包数据...</b>');
+    wxalert('<img style=\"width: 30px\" src=\"https://cdn.jsdelivr.net/gh/powerXIXI/envelope/assets/loading.gif"><br><b style=\"font-size: 20px;color: red\">正在查询红包数据...</b>');
 }
 
 function it(n) {
@@ -90,25 +90,6 @@ function it(n) {
     return t != null ? decodeURI(t[2]) : null
 }
 
-function getNumber() {
-    count--;
-    $(".hb_bot span").html(count);
-    if (count == 0) {
-        $(".hb_bot span").html(0);
-        $(".hb_list li").unbind();
-        $(".hb_list").click(function() {
-            popNoticeDiv();
-            var currentM = $(".hb_money span").html();
-            $(".notice_money span").html(currentM);
-            if (currentM >= 228.8) {
-                $(".notice_con").html("恭喜您！已达提现额度");
-                $(".notice_btn").find('img').attr("src", "//i.46.si/fang/image/button_tx.png");
-            } else {
-                $(".notice_con span").html((238.8 - parseFloat(currentM)).toFixed(2));
-            }
-        });
-    }
-}
 
 $(".red-packet").click(function() {
     // share_start();
