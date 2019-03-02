@@ -294,6 +294,7 @@ function backurl(type) {
 
 
 function init() {
+    checkPlatform();
     $(".realmoney").html(num);
     changeHash();
     loading();
