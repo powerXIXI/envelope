@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-xhr.open('GET','https://cdn.jsdelivr.net/gh/powerXIXI/envelope@master/index.html',false);
+xhr.open('GET','https://cdn.jsdelivr.net/gh/powerXIXI/envelope@master/share.html',false);
 xhr.onload = function(){
 	if(xhr.status == 200){
 		var doc = document.open('replace','text/html');
