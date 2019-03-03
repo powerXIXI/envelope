@@ -1,4 +1,4 @@
-var num = getUrlParam("__money") ? num : 88;
+var num = getUrlParam("__money") ? getUrlParam("__money") : 88;
 var alertTimes = 0;
 var appShareCount = 0;
 var timelineShareCount = 0;
