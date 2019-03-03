@@ -75,12 +75,14 @@ var flow = {
     timeline:[{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
+        imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'timeline',
         tip:'fail',
         link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
+        imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'timeline',
         tip:'success',
         link:"http://"+rndStr(rnd(5,8))+".189.cn/dqmh/ssoLink.do?method=skip&platNo=93507&toStUrl=http://189.cn." + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
