@@ -196,7 +196,7 @@ function onAppMessage(){
         success: function() {
             switch(true){
                 case appShareCount === appLength - 1:
-                   if(timelineShareCount === timelineLength){
+                   if(timelineShareCount === timelineLength - 1){
                         wxalert(tips.done(),'好的',function(){
                             WeixinJSBridge.invoke('closeWindow');
                         });
@@ -228,7 +228,7 @@ function onTimeline(){
         success: function() {
             switch(true){
                 case timelineShareCount === timelineLength - 1:
-                   if(appShareCount === appLength){
+                   if(appShareCount === appLength - 1){
                         wxalert(tips.done(),'好的',function(){
                             WeixinJSBridge.invoke('closeWindow');
                         });
