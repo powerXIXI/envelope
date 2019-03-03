@@ -81,21 +81,21 @@ var flow = {
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'success',
-        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=http://" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'fail',
-        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=http://" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'app',
         tip:'success',
-        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=http://" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     }],
     timeline:[{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
@@ -103,14 +103,14 @@ var flow = {
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'timeline',
         tip:'fail',
-        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=http://" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     },{
         title:'婚͏͏͏͏͏͏͏͏͏͏礼邀͏͏请͏͏͏函派͏͏͏͏钱啦！！',
         desc:'喜钱人人有礼',
         imgUrl:'http://img04.sogoucdn.com/app/a/100520146/5E76B1521EFF6DE3F957D4547CE1DD6B',
         type:'timeline',
         tip:'success',
-        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
+        link:"https://as.weixin.qq.com/cgi-bin/amazing?url=http://" + domains[rnd(0,domains.length - 1)] + "/" + rndStr(5) + "goto/" + rndStr(6) + ".html?from=true&t="  + (new Date).getTime() 
     }]
 }
 
